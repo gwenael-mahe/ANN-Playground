@@ -6,7 +6,7 @@ class ANN:
     def __init__(self, features, target):
         self.features = features
         self.target = target
-        self.weights = self.get_weights(self.data)
+        self.weights = self.get_weights()
         self.bias = 0.5
         self.l_rate = 0.1
         self.epoch = 20
@@ -47,7 +47,7 @@ class ANN:
                 # gradient descent
                 self.weights = self.update_weights(self.target, prediction, self.features)
                 self.update_bias(self.target, prediction)
-        avg_loss = sum(individual_loss) / len(individual_loss)
-        self.epoch_loss.append(avg_loss)
-        print("epoch: ", e)
-        print("avg loss: ", avg_loss)
+            avg_loss = sum(individual_loss) / len(individual_loss)
+            self.epoch_loss.append(avg_loss)
+            print("epoch: ", e)
+            print("avg loss: ", avg_loss)
